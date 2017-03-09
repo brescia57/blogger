@@ -4,4 +4,6 @@ Rails.application.routes.draw do
   	resources :comments
   end
   #above, comments is a sub-resource of articles
+  resources :tags
+  
 end
