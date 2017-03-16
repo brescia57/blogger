@@ -5,6 +5,8 @@
 		<%= link_to tag.name, tag_path(tag) %>
 	<% end %>
 </p>
+
+<% if logged_in? %>
 <p>
 	<% if @article.image.exists? %>
 	<%= image_tag @article.image.url(:thumb) %>
@@ -18,3 +20,4 @@
 <%= link_to "<< Back to Articles List", articles_path %>
 <%= link_to "delete", article_path(@article), method: :delete, data: {confirm: "Really delete the article?"} %>
 <%= link_to "edit", edit_article_path(@article) %>
+<% end %>
